@@ -35,11 +35,7 @@ jobs:
           git config --local user.name "MCXCC"
           git remote set-url origin https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
           git pull --rebase
-          git checkout -b pr
           git commit --allow-empty -m "A commit a day, keeps your girlfriend away."
-          git checkout main
-          git merge main pr
-          git branch -d pr
           git push
 
       # Runs a set of commands using the runners shell
